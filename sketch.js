@@ -27,7 +27,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  fire = !fire;
+  fire = true;
 }
 
 

@@ -15,13 +15,11 @@ class Target {
 
   motion() {
     this.x += this.speed;
-    if (this.x - this.width * 2 > width) {
+    if ((this.x - this.width > width) || (this.y > height)) {
       this.x = 0 - this.width;
       this.y = random(50, 200);
       this.speed = random (1.5, 3.5);
       this.width = random(60, 100);
-    }
-    if (this.y > height){
       falling = false;
     }
   }
