@@ -8,7 +8,6 @@ class Projectile {
   }
 
   show() {
-    //Projectile
     fill (255,0,0);
     rect(this.x, this.y, this.width, this.height);
     fill(255);

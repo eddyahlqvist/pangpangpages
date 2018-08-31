@@ -15,6 +15,7 @@ class Weapon {
     rect (width/2 - 21, height -5, 50, 5)
     rect (width/2 + 2, height -5, 4, -36)
   }
+
   shoot() {
     if (fire) {
       projectile.y -= projectile.speed;

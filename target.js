@@ -24,21 +24,37 @@ class Target {
     }
   }
 
+  streakInfo() {
+    if (addStreak = true) {
+      textSize(24);
+      fill(255);
+      text("Streak: " + streak, 15, height -55);
+      textSize(32);
+      text("Record: " + record, 15, height -20);
+    }
+    if (streak > record) {
+      record++;
+    }
+    if (this.x > width) {
+      streak = 0;
+    }
+  }
+
   hitDetection() {
-    if ((projectile.x > target.x && projectile.x < target.x+target.width) && (projectile.y <= target.y + target.height && projectile.y >= target.y)) {
+    if ((projectile.x > this.x && projectile.x < this.x+this.width) && (projectile.y <= this.y + this.height && projectile.y >= this.y)) {
       falling = true;
-      fire = !fire;
+      fire = !fire
+      streak++;
+      addStreak = true;
       projectile.y = projectile.y = height - 44;
     }
     if (projectile.y < 0) {
       fire = !fire;
       projectile.y = projectile.y = height - 44;
     }
-  }
-
-  hit() {
     if (falling){
-      target.y += target.yspeed;
+      this.y += this.yspeed;
     }
   }
+
 }
